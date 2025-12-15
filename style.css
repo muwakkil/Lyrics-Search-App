@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8ecd9;
+  font-family: "Montserrat Alternates", sans-serif;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* 
+Raymond Petrik
+https://unsplash.com/photos/a-room-with-a-lot-of-records-on-the-wall-JPR7maROUE8 
+*/
+
+header {
+  background-image: url("2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  /* Position this relative so we can position its descendant using absolute */
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* Adjust this to your preference */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Select everything in the header */
+header * {
+  /* The higher the z-index the more on top or closer to us */
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0 0 30px;
+  font-family: "Petit Formal Script", cursive;
+  font-size: 60px;
+}
+
+
+form {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+
+form input {
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 15px 30px;
+  width: 100%;
+}
+
+form button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #291d03;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  padding: 13px 30px;
+}
+
+/* Injecting the btn class via JS */
+.btn {
+  background-color: #695f00;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  padding: 4px 10px;
+}
+
+/* We won't see these styles until we fetch the data from the API */
+ul.songs {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.songs li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.container {
+  margin: 30px auto;
+  max-width: 100%;
+  width: 500px;
+}
+
+.container h2 {
+  font-weight: 300;
+}
+
+.container p {
+  text-align: center;
+}
+
+/* Previous and Next buttons have a class of centered */
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.centered button {
+  transform: scale(1.3);
+  margin: 15px;
+}
+
+
+
+/* Audio Player Styles */
+#audio-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+ }
+ 
+ #audio-player {
+  width: 100%;
+  max-width: 500px;
+ }
+ 
+ /* Lyrics Display Styles */
+ .lyrics-container {
+  padding: 20px;
+  line-height: 2;
+  font-size: 18px;
+ }
+ 
+ .lyrics-container .lyric-line {
+  padding: 8px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+ }
+ 
+ .lyrics-container .lyric-line.active {
+  background-color: #2d2409;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .lyrics-container .lyric-line.past {
+  opacity: 0.5;
+ }
