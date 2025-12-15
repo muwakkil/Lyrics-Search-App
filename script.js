@@ -6,7 +6,8 @@ const more = document.getElementById('more');
 const audioContainer = document.getElementById('audio-container');
 const audioPlayer = document.getElementById('audio-player');
 
-const apiURL = 'http://localhost:3000';
+const apiURL = 'https://lyrics-search-app.onrender.com';
+// const apiURL = 'http://localhost:3000';
 
 // Search by song or artist
 async function searchSongs(term) {
